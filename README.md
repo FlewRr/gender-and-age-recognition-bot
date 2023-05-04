@@ -1,3 +1,4 @@
-# gender-and-age-recognition-bot
+# Gender/Age recognition bot
 
-Телеграм бот, предсказывающий пол и возраст человека на изображении, которое ему дано.
+## Description:
+Welcome to our project! This is a telegram bot made in Python. It can recognize the gender and age of the person on the image user gives him.
