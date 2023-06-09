@@ -10,7 +10,7 @@ import torch
 
 async def welcome(msg: types.Message):
     await States.work.set()
-    await msg.reply(messages.start, reply_markup=utils.form_reply_keyboard(["Positive", "Negative"]))
+    await msg.reply(messages.start, reply_markup=utils.form_reply_keyboard(["Let's start that shit", "Nah, I'll pass"]))
 
 
 async def image_handler(msg: types.Message, state: FSMContext):
