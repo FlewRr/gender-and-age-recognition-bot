@@ -34,7 +34,7 @@ async def image_handler(msg: types.Message, state: FSMContext):
 
 async def question_answer(msg: types.Message, state: FSMContext):
     await States.question.set()
-    await msg.reply(messages.question, reply_markup=utils.form_reply_keyboard(['Yes']))
+    await msg.reply(messages.question, reply_markup=utils.form_reply_keyboard(['Yes', 'No']))
 
 
 async def question_answer_tochno(msg: types.Message, state: FSMContext):

@@ -1,12 +1,22 @@
 import numpy as np
-import cv2
+from PIL import Image
 import torch
+import torchvision.transforms as transforms
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
+transform = transforms.Compose([
+    transforms.ToPILImage(),
+    transforms.Resize(224),
+    transforms.ToTensor(),
+    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+])
+
 def prepare_image(path):
-    image = cv2.imread(path).transpose((2, 0, 1))
-    image = cv2.resize(image, dsize=(224, 224))
-    image = torch.from_numpy(image).float()
+    image = Image.open(path).convert('RGB')
+    image.load()
+    image = np.array(image)
+    #image = cv2.resize(image, dsize=(224, 224))
+    image = transform(image)
 
     return image
 

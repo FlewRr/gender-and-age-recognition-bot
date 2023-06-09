@@ -5,7 +5,7 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
 from handler import welcome, image_handler, question_answer, question_answer_tochno
 from bot.states import States
-bot = Bot(token="6273079084:AAEAQEa7yQj80cNvoK6XojrF5i3X1BwPFcc")
+bot = Bot(token="")
 dp = Dispatcher(bot, storage=MemoryStorage())
 
 dp.register_message_handler(welcome, commands=["start"], state="*")
