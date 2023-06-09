@@ -5,6 +5,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 def prepare_image(path):
     image = cv2.imread(path).transpose((2, 0, 1))
+    image = cv2.resize(image, (224, 224))
     image = torch.from_numpy(image).float()
 
     return image
