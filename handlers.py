@@ -11,7 +11,7 @@ import torch
 async def welcome(msg: types.Message):
     await States.work.set()
     await msg.reply(messages.start, reply_markup=utils.form_reply_keyboard(["Let's start that shit", "Nah, I'll pass"]))
-
+    
 
 async def image_handler(msg: types.Message, state: FSMContext):
     images = msg.photo
@@ -34,16 +34,25 @@ async def image_handler(msg: types.Message, state: FSMContext):
 
 async def question_answer(msg: types.Message, state: FSMContext):
     await States.question.set()
-    await msg.reply(messages.question, reply_markup=utils.form_reply_keyboard(['Yes', 'No']))
+
+    if msg.text == f"Nah, I\'ll pass":
+        await msg.reply(messages.error)
+        return 0
+    else:
+        await msg.reply(messages.question, reply_markup=utils.form_reply_keyboard(['Age', 'Gender', 'I\'m out of here']))
 
 
 async def question_answer_tochno(msg: types.Message, state: FSMContext):
     await States.image.set()
 
-    if msg.text != "Yes":
-        await msg.reply(messages.error, reply_markup=utils.form_reply_keyboard(["Yes"]))
-    else:
+    if msg.text == 'I\'m out of here':
+        await msg.reply(messages.error)
+        return 0
+    elif msg.text == 'Age':
         await States.image.set()
         await msg.reply(messages.image)
+    else:
+        await msg.reply("This is currently not available due to your geolocation")
+        return 0
     
 

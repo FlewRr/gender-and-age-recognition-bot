@@ -20,8 +20,8 @@ def prepare_image(path):
 
     return image
 
-def form_reply_keyboard(buttons_info):
-    keyboard = ReplyKeyboardMarkup()
+def form_reply_keyboard(buttons_info, one_time=True):
+    keyboard = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=one_time)
 
     for i in range(len(buttons_info)):
         print(buttons_info[i])

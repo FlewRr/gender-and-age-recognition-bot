@@ -3,7 +3,7 @@ from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
-from handler import welcome, image_handler, question_answer, question_answer_tochno
+from handlers import welcome, image_handler, question_answer, question_answer_tochno
 from bot.states import States
 bot = Bot(token="")
 dp = Dispatcher(bot, storage=MemoryStorage())
