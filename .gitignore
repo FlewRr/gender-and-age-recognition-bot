@@ -153,7 +153,7 @@ dmypy.json
 cython_debug/
 
 #Bot token
-token.py
+token.txt
 
 #
 model_states/
