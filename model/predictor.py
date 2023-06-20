@@ -26,5 +26,4 @@ new_classifier = nn.Sequential(
 
 model_beaty.eval()
 model_beaty.classifier = new_classifier
-model_beaty.load_state_dict(torch.load('model/model_states/model_state_beaty', map_location=torch.device('cpu')))g
-
+model_beaty.load_state_dict(torch.load('model/model_states/model_state_beaty', map_location=torch.device('cpu')))
