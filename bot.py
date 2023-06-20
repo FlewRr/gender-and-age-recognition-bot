@@ -6,7 +6,7 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from handlers import welcome, age_image_handler, attractiveness_image_handler, question_answer, question_answer_tochno
 from bot.states import States
 
-TOKEN = open('token.txt').read() ## paste path to txt file with bot's token
+TOKEN = open('token/token.txt').read() ## paste path to txt file with bot's token
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot, storage=MemoryStorage())
