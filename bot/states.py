@@ -5,3 +5,4 @@ class States(StatesGroup):
     question = State()
     image_age = State()
     image_attractiveness = State()
+    face_detection = State()

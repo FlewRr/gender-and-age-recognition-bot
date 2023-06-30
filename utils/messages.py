@@ -3,5 +3,5 @@ question = "What would you like me to do?"
 error = "Why is it? Do not frustrate my robotic feelings"
 image_age = "Now send me your great image of a person and I'll do my best to detect their age"
 image_hot = "Now if you send me the image of a person, I could tell attractiveness of this person on the scale from 1 to 5"
+image_detection = "Now send me your image and I'll detect face of the person on it!"
 prediction = "That's your prediction: {0}"
-
