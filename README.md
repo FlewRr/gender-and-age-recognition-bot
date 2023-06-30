@@ -11,4 +11,3 @@ Basically, this project serves only for educational purposes so it may be not pe
 4. Run bot.py or place it on server and run it there.
 
 ## Links:
-State Dicts
